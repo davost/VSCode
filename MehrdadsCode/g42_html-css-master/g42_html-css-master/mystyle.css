@@ -1,0 +1,20 @@
+ /* tag selector */
+ body {
+    background-color: rgb(63, 130, 70);
+}
+/* tag selector */
+h1 {
+    font-size: 90px;
+}
+/* id selector */
+#test {
+    color: rgb(255, 153, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+/* class selector */
+.container {
+    padding: 200 px;
+    margin: 100px;
+    background-color: aqua;
+}
