@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import DataTable from "./dataTable/DataTable";
 
-ReactDOM.render(<h2>Hello React!!</h2>, document.getElementById('root') );
+ReactDOM.render(<DataTable />, document.getElementById('root') );
