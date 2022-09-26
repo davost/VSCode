@@ -1,4 +1,5 @@
 import React, { useEffect , useState } from 'react';
+import TableRowProps from './TableRowProps';
 
 const DataTable = () => {
     const initialState = [
@@ -24,24 +25,21 @@ const DataTable = () => {
         );
     };
     
-    const TableRow = (props) => {
-    const [tableRows, setTableRows] = useState([]);
-        useEffect(() => {
-            setTableRows(props.list);
-        }, []);
+    const TableRow = () => {
+    
     
         return ( 
             <tbody>
-            {tableRows.map((student) => {
+            {studentList.map((student) => {
                 const row = (
                     <tr key={student.id}>
                         <td>{student.id}</td>
                         <td>{student.firstName}</td>
                         <td>{student.lastName}</td>
                         <td>{student.age}</td>
-                        //<td>
-                        //<TableAction student={student} />
-                        //</td>
+                        {/*<td>
+                        <TableAction student={student} />
+                        </td>*/}
                     </tr>
                 );
                 return row;
@@ -57,6 +55,7 @@ const DataTable = () => {
             <table>
                 <TableHeader />
                 <TableRow />
+               <TableRowProps list={studentList} />
             </table>
         </div>
     );
