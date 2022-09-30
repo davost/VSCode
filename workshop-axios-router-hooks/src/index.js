@@ -1,4 +1,6 @@
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import DemoRouter, { Welcome } from "./DemoRouter";
 
-ReactDOM.render(<p>Hello Axios</p> , document.getElementById('root') );
+
+ReactDOM.render(<DemoRouter /> , document.getElementById('root') );
