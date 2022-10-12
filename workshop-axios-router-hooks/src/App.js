@@ -1,8 +1,18 @@
-import axios from 'axios';
+/* import axios from 'axios'; */
 import React from 'react';
+import DemoRouter from './DemoRouter';
+/* import Header from './Header' */
 
 const App = () => {
-    const API_URL = "http://localhost:8080/api/v1/person";
+    return (
+        <div>
+            <DemoRouter />
+        </div>
+        
+    )
+    
+}
+/*     const API_URL = "http://localhost:8080/api/v1/person";
     const getAllPersonsAction = async () => {
         console.log("1. getAllPersonsAction");
         await axios.get(API_URL).then(response => {
@@ -25,5 +35,5 @@ const App = () => {
         </div>
     );
 };
-
+ */
 export default App;

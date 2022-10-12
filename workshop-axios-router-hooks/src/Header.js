@@ -21,7 +21,10 @@ const Header = () => {
                             <Link class="nav-link" to="/person">Person</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" >NotFound</Link>
+                            <Link class="nav-link" to="/crud">CrudDemo</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link class="nav-link" to="/person">Register</Link>
                         </li>
                     </ul>
                     {/* <form class="d-flex">

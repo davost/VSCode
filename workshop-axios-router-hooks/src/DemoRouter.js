@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Header from './Header';
+import CrudDemo from './CrudDemo';
 
 const DemoRouter = () => {
     return (
@@ -12,6 +13,8 @@ const DemoRouter = () => {
                     <Route path="/home" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/person" component={Person} />
+                    <Route path="/crud" component={CrudDemo} />
+                    {/* <Route path="/details/:id" component={PersonDetails} /> */}
                 </Switch>
             </Router>
         </div>
@@ -40,9 +43,14 @@ export const About = () => {
 
 export const Person = () => {
     return (
-        <div>Person</div>
+        <div>
+            Person
+            <Redirect to={"/crud"} />
+        </div>
+        
     );
 }
+
 
 export const NotFound = () => {
     return (
