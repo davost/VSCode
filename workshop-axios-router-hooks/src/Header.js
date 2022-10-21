@@ -27,10 +27,6 @@ const Header = () => {
                             <Link class="nav-link" to="/person">Register</Link>
                         </li>
                     </ul>
-                    {/* <form class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Search">
-                        <button class="btn btn-primary" type="button">Search</button>
-                    </form> */}
                 </div>
             </div>
         </nav>
