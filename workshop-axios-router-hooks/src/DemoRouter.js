@@ -1,61 +1,64 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-import Header from './Header';
-import CrudDemo from './CrudDemo';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import CrudDemo, { PersonDetails } from './CrudDemo';
+import Table from './Table';
 
+// React Router DOM is for web applications
+// react-router contains all the common components between react-router-dom and react-router-native.
+
+//rsc
 const DemoRouter = () => {
     return (
-        <div className='container'>
+        <div>
             <Router>
-                <Header/>
+                <Header />
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     <Route path="/home" component={Home} />
+                    <Route path="/person" component={Person} />
                     <Route path="/about" component={About} />
                     <Route path="/person" component={Person} />
                     <Route path="/crud" component={CrudDemo} />
                     {/* <Route path="/details/:id" component={PersonDetails} /> */}
+
+                    <Route component={NotFound} />
                 </Switch>
             </Router>
         </div>
-    )
-}
-
-export const Home = () => {
-    return (
-        <div className='container'>
-            <p>Home</p>
-        </div>
     );
-}
+};
 
-const Welcome = () => {
-    return (
-        <div>Welcome</div>
-    );
-}
+const Welcome = () => "Welcome Page";
+const Home = () => "Home Page";
+const About = () => "About Us Page";
+const Person = () => <Redirect to={"/crud"} />;
+const NotFound = () => "NotFound Page";
 
-export const About = () => {
-    return (
-        <div>About</div>
-    );
-}
-
-export const Person = () => {
-    return (
-        <div>
-            Person
-            <Redirect to={"/crud"} />
-        </div>
-        
-    );
-}
-
-
-export const NotFound = () => {
-    return (
-        <div>NotFound</div>
-    );
-}
+ const Header = () => {
+     return(
+         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+           <div className="container-fluid">
+             <Link  className="navbar-brand" to="/">React</Link>
+             <ul className="navbar-nav me-auto">
+               <li className="nav-item">
+                 <Link  className="nav-link" to="/home">Home</Link>
+               </li>
+               <li className="nav-item">
+                 <Link  className="nav-link" to="/person">Person</Link>
+               </li>
+               <li className="nav-item">
+                 <Link  className="nav-link" to="/about">About Us</Link>
+               </li>
+               <li className="nav-item">
+                 <Link  className="nav-link active" to="/crud">CRUD</Link>
+               </li>
+             </ul>
+             <form className="d-flex">
+               <Link className="btn btn-primary" to="/person">Sign Up</Link>
+             </form>
+           </div>
+         </nav>
+     );
+     }
 
 export default DemoRouter;

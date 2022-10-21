@@ -24,6 +24,9 @@ const TableRow = () => {
                             <td>{person.id}</td>
                             <td>{person.name}</td>
                             <td>{person.email}</td>
+                            <td>
+                                <TableAction id={person.id} />
+                            </td>
                         </tr>
                     );
                     return row;
@@ -41,9 +44,12 @@ const TableAction = (props) => {
     
 }
     return (
-        <div>
-            
-        </div>
+        <div className="container">
+                <table className="table table-striped">
+                    <TableHeader />
+                    <TableRow />
+                </table>
+            </div>
     );
 };
 
